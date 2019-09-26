@@ -1,3 +1,5 @@
+import java.io.PrintStream;
+
 /**
  * Lab 6
  * 
@@ -33,7 +35,7 @@ public abstract class Shape implements Comparable<Shape>
     
     public double getPerimeter()
     {
-    	return Shape.getPerimeter();
+    	return this.getPerimeter();
     }
     
     public static String getShapeType()
@@ -90,11 +92,34 @@ public abstract class Shape implements Comparable<Shape>
 	 *         (b) Area of this is < area of s: return -1 (this should come before s in a sorted list)
 	 *         (C) Area of this = area of s: return 0 (this is effecitively equal to s in a sorted list)
 	 */
+	@SuppressWarnings("static-access")
 	@Override
 	public int compareTo(Shape s)
 	{
 	    
-		if(shape.getPerimeter() > s.getPerimeter())
+		if(this.getPerimeter() > s.getPerimeter())
+		{
+			return 1;
+		}
+		else if(this.getPerimeter() < s.getPerimeter())
+		{
+			return -1;
+		}
+		else //if(this.getPerimeter() == s.getPerimeter())
+		{
+			if(this.getArea() > s.getArea())
+			{
+				return 1;
+			}
+			else if(this.getArea() < s.getArea())
+			{
+				return -1;
+			}
+			else
+			{
+				return 0;
+			}
+		}
 		
 	}
 	
@@ -129,6 +154,12 @@ public abstract class Shape implements Comparable<Shape>
 	@Override
 	public String toString()
 	{
-	    // TODO: implement this.
+//	    String returns = (this.getShapeType() + "\t" + this.getId() + "\t" + 
+		//use printstream to make the rounding part easier
+		@SuppressWarnings("static-access")
+		PrintStream returns = System.out.format("%s\t ID = %d\t area = %.3f\t perimeter = %.3f", 
+				this.getShapeType(), this.getId(), this.getArea(), this.getArea());
+		
+		return returns.toString();
 	}
 }
