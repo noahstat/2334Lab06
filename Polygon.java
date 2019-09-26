@@ -20,7 +20,7 @@ public abstract class Polygon extends Shape
      */
     public Polygon(String id)
     {
-        // TODO: implement this.
+        super(id);
     }
     
     /**
@@ -30,6 +30,11 @@ public abstract class Polygon extends Shape
      */
     public double getPerimeter()
     {
-        // TODO: implement this.
+    	double sum = 0;
+        for(int index = 0; index < sideLengths.size(); ++index)
+        {
+        	sum += sideLengths.get(index);
+        }
+        return sum;
     }
 }
