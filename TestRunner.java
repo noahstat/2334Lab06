@@ -34,6 +34,7 @@ public class TestRunner
 			boolean allPassed = true;
 			try {
 				// Get an instance of the class from the name:
+				@SuppressWarnings("deprecation")
 				Object classInstance = Class.forName(className).newInstance();
 
 				// Get all methods declared (i.e. not inherited) from the class:
