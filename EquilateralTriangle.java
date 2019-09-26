@@ -20,7 +20,7 @@ public class EquilateralTriangle extends Triangle
 	 */
 	public EquilateralTriangle(String id, double sideLength)
 	{
-		// TODO: implement this.
+		super(id, sideLength, sideLength, sideLength);
 	}
 	
 	/**
@@ -30,7 +30,7 @@ public class EquilateralTriangle extends Triangle
 	 */
 	public double getArea()
 	{
-		// TODO: implement this.
+		return ((0.5 * sideLength) * sideLength);
 	}
 	
 	/**
@@ -41,6 +41,6 @@ public class EquilateralTriangle extends Triangle
 	@Override
 	public String getShapeType()
 	{
-		// TODO: implement this.
+		return "EquilateralTriangle";
 	}
 }
