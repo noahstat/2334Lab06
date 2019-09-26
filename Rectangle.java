@@ -44,7 +44,7 @@ public class Rectangle extends Polygon
 	@Override
 	public double getArea()
 	{
-	    // TODO: implement this.
+	    return (width * height);
 	}
 	
 	/**
@@ -55,6 +55,6 @@ public class Rectangle extends Polygon
 	@Override
 	public String getShapeType()
 	{
-	    // TODO: implement this.
+	    return "Rectangle";
 	}
 }

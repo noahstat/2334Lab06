@@ -18,7 +18,7 @@ public class Square extends Rectangle
      */
 	public Square(String id, double sidelength)
 	{
-		// TODO: implement this.
+		super(id, sidelength, sidelength);
 	}
 	
 	/**
@@ -29,6 +29,6 @@ public class Square extends Rectangle
 	@Override
 	public String getShapeType()
 	{
-	 // TODO: implement this.
+	 return "Square";
 	}
 }
