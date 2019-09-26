@@ -28,9 +28,9 @@ public abstract class Shape implements Comparable<Shape>
     
     // TODO: declare abstract methods.
     
-    public static double getArea()
+    public double getArea()
     {
-    	return Shape.getArea();
+    	return this.getArea();
     }
     
     public double getPerimeter()
@@ -38,9 +38,9 @@ public abstract class Shape implements Comparable<Shape>
     	return this.getPerimeter();
     }
     
-    public static String getShapeType()
+    public String getShapeType()
     {
-    	return Shape.getShapeType();
+    	return this.getShapeType();
     }
 	
 	/**
