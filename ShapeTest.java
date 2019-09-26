@@ -14,25 +14,45 @@ public class ShapeTest
     /**
      * Tests for the square class.
      */
-	public void SquareTest()
+	public void SquareTest() throws AssertException
 	{
-	    // TODO: implement this.
+	    Square sqare = new Square("square1", 5.0);
+	    String expected = "Square";
+	    Assert.assertEquals(expected, sqare.getShapeType());
+		
 	}
 	
 	/**
      * Tests for the rectangle class.
      */
-	public void RectangleTest()
+	public void RectangleTest() throws AssertException
 	{
-	    // TODO: implement this.
+		Rectangle rect = new Rectangle("rectangle1", 5.0, 8.0);
+		
+		//test the get shape
+	    String expected = "Rectangle";
+	    Assert.assertEquals(expected, rect.getShapeType());
+	    
+	    //test the area
+	    double expecteds = 5.0 * 8.0;
+	    Assert.assertEquals(expecteds, rect.getArea());
 	}
 	
 	/**
      * Tests for the equilateral triangle class.
      */
-	public void EquilateralTriangleTest()
+	public void EquilateralTriangleTest() throws AssertException
 	{
-	    // TODO: implement this.
+	    EquilateralTriangle tri = new EquilateralTriangle("eqtri1", 3);
+	    
+	    //test get shape
+	    String expected = "EquilateralTriangle";
+	    Assert.assertEquals(expected, tri.getShapeType());
+	    
+	    //test area
+	    double expect = 4.5;
+	    Assert.assertEquals(expect, tri.getArea());
+	    
 	}
 	
 	/**
