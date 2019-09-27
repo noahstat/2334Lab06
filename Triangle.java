@@ -14,8 +14,8 @@ public abstract class Triangle extends Polygon
 	private double s2;
 	
 	//has the third side length
-	
 	private double s3;
+	
     /**
      * The triangle constructor. Add the sides to the sideLengths arraylist.
      * 
