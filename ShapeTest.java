@@ -16,6 +16,7 @@ public class ShapeTest
      */
 	public void SquareTest() throws AssertException
 	{
+		//test the get shape type
 	    Square sqare = new Square("square1", 5.0);
 	    String expected = "Square";
 	    Assert.assertEquals(expected, sqare.getShapeType());
@@ -80,7 +81,38 @@ public class ShapeTest
      */
 	public void CompareTest() throws AssertException
 	{
-	    // TODO: implement this.
+		//test equals with two different shapes
+	    Square test1 = new Square("the one", 2.0);
+	    Rectangle test2 = new Rectangle("the only", 2.0, 2.0);
+	    ShapeComparator comp = new ShapeComparator();
+	    
+	    int expected = 0;
+	    Assert.assertEquals(expected, comp.compare(test1, test2));
+	    
+	    //test the actual equals
+	    Assert.assertEquals(expected, comp.equals(test1, test2));
+	    
+	    //test the less than
+	    EquilateralTriangle test3 = new EquilateralTriangle("the truth", 1.0);
+	    
+	    expected = 1;
+	    Assert.assertEquals(expected, comp.compare(test3, test2));
+	    
+	    //test the greater than
+	    expected = -1;
+	    Assert.assertEquals(expected, comp.compare(test1, test3));
+	    
+	    //test the equal area but different perimeters
+	    test3 = new EquilateralTriangle("the light", 8.0);
+	    test2 = new Rectangle("the way", 1.0, 32.0);
+	    
+	    expected = -1;
+	    Assert.assertEquals(expected, comp.compare(test2, test3));
+	    
+	    //the other one
+	    expected = 1;
+	    Assert.assertEquals(expected, comp.compare(test3, test2));
+	    
 	}
 	
 	/**
@@ -88,7 +120,11 @@ public class ShapeTest
 	 */
 	public void ShapeToStringTest() throws AssertException
 	{
-	    // TODO: implement this.
+		Square test1 = new Square("the one", 2.0);
+		
+		//= System.out.format("%s\t ID = %d\t area = %.3f\t perimeter = %.3f", 
+		//this.getShapeType(), this.getId(), this.getArea(), this.getArea());
+		String expected = "";
 	}
 	
 	/**
