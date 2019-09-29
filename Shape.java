@@ -1,3 +1,4 @@
+//import java.io.PrintStream;
 
 /**
  * Lab 6
@@ -152,9 +153,34 @@ public abstract class Shape implements Comparable<Shape>
 	 */
 	@Override
 	public String toString()
-	{	
+	{
+//	    String returns = (this.getShapeType() + "\t" + this.getId() + "\t" + 
+		//use printstream to make the rounding part easier
+//		PrintStream returns = ("%s\t ID = %s\t area = %.3f\t perimeter = %.3f", 
+//				this.getShapeType(), this.getId(), this.getArea(), this.getPerimeter());
 		
-		return (this.getShapeType() + "\t ID = " + this.getId() + "\t area = " + (Math.round(this.getArea() * 1000.0))/1000.0 + 
-				"\tperimeter = " + ((Math.round(this.getPerimeter() * 1000.0))/1000.0));
+//		(this.getShapeType() + "\t ID = " + this.getId() + "\t area = " + (Math.round(this.getArea() * 1000.0))/1000.0 + 
+//				"\tperimeter = " + ((Math.round(this.getPerimeter() * 1000.0))/1000.0));
+		long f = (long) Math.pow(10, 3);
+	    double val;
+	    long temp;
+	    
+		
+		String shape = this.getShapeType();
+		String id = this.getId();
+		
+		//I got the idea from stack overflow because printstream was acting up
+		val = this.getArea() * f;
+		temp = Math.round(val);
+		double area = ((double) temp / f);
+		
+		val = this.getPerimeter() * f;
+		temp = Math.round(val);
+		double perimeter = ((double) temp / f);
+		
+		return (shape + "\t ID = " + id + "\t area = " + area + "\tperimeter = " + perimeter);
+		
+//		return (("%s\t ID = %s\t area = %.3f\t perimeter = %.3f", 
+//				shape, id, area, perimeter));
 	}
 }
