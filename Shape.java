@@ -1,4 +1,3 @@
-import java.io.PrintStream;
 
 /**
  * Lab 6
@@ -153,13 +152,9 @@ public abstract class Shape implements Comparable<Shape>
 	 */
 	@Override
 	public String toString()
-	{
-//	    String returns = (this.getShapeType() + "\t" + this.getId() + "\t" + 
-		//use printstream to make the rounding part easier
-		@SuppressWarnings("static-access")
-		PrintStream returns = System.out.format("%s\t ID = %d\t area = %.3f\t perimeter = %.3f", 
-				this.getShapeType(), this.getId(), this.getArea(), this.getArea());
+	{	
 		
-		return returns.toString();
+		return (this.getShapeType() + "\t ID = " + this.getId() + "\t area = " + (Math.round(this.getArea() * 100))/100 + 
+				"\tperimeter = " + (Math.round(this.getPerimeter() * 100))/100);
 	}
 }
