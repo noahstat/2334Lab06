@@ -30,7 +30,8 @@ public class EquilateralTriangle extends Triangle
 	 */
 	public double getArea()
 	{
-		return (Math.pow((2.0/3.0), sideLength*sideLength*sideLength)*(Math.sqrt(3.0)/4.0));
+		return (((Math.sqrt(3.0))/4.0) * Math.pow((sideLength*sideLength*sideLength), (2.0/3.0)));
+		//     (Math.pow((sideLength*sideLength*sideLength)*((Math.sqrt(3.0))/4.0), (2.0/3.0)));
 	}
 	
 	/**
