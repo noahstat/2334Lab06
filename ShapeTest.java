@@ -103,7 +103,7 @@ public class ShapeTest
 	    Assert.assertEquals(expected, comp.compare(test1, test3));
 	    
 	    //test the equal area but different perimeters
-	    test3 = new EquilateralTriangle("the light", 8.0);
+	    test3 = new EquilateralTriangle("the light", 8.59655945459);
 	    test2 = new Rectangle("the way", 1.0, 32.0);
 	    
 	    expected = -1;
@@ -124,7 +124,9 @@ public class ShapeTest
 		
 		//= System.out.format("%s\t ID = %d\t area = %.3f\t perimeter = %.3f", 
 		//this.getShapeType(), this.getId(), this.getArea(), this.getArea());
-		String expected = "";
+		String expected = "Square	ID = the one	area = 4.000	perimeter = 8.000";
+		
+		Assert.assertEquals(expected, test1.toString());
 	}
 	
 	/**
@@ -132,6 +134,33 @@ public class ShapeTest
 	 */
     public void NaturalCompareTest() throws AssertException
     {
-	    // TODO: implement this.
+	    //the natural order is sorted by the perimeter it seems
+ArrayList<Shape> list = new ArrayList<Shape>();
+		
+		Shape s1 = new Square("A", 4.0);
+		Shape s2 = new Rectangle("B", 4.0, 1.0);
+		Shape s3 = new Rectangle("A", 8.0, 2.0);
+		Shape s4 = new Circle("C",3.0);
+		Shape s5 = new EquilateralTriangle("D",5.0);
+		
+		list.add(s1);
+		list.add(s2);
+		list.add(s4);
+		list.add(s3);
+		list.add(s5);
+		
+		Collections.sort(list);
+		int sum = 0;
+		
+		for(int i = 1; i < 4; ++i)
+		{
+			if(list.get(i - 1).getPerimeter() <= list.get(i).getPerimeter())
+			{
+				++sum;
+			}
+		}
+    	
+		Assert.assertEquals(5, sum);
+    	
     }
 }
