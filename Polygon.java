@@ -11,7 +11,7 @@ public abstract class Polygon extends Shape
     /**
      * A list of the lengths of the sides of the polygons.
      */
-    protected ArrayList<Double> sideLengths;
+    protected ArrayList<Double> sideLengths = new ArrayList<Double>();
     
     /**
      * Initializes the sideLengths arraylist and sets the Shape's ID.
